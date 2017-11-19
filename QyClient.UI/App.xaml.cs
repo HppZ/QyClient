@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using QyClient.UI.View;
+using QyClient.UI.View.MainView;
 
 namespace QyClient.UI
 {
