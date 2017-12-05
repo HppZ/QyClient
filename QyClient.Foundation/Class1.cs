@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QyClient.Storage.Storage
+namespace QyClient.Foundation
 {
-    class DownloadItemStorage
+    public class Class1
     {
-
-
-
     }
 }

@@ -108,6 +108,9 @@
   <ItemGroup>
     <Compile Include="Controller\QyClientControllerAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DAL\Entity\AppSettingEntity.cs" />
+    <Compile Include="DAL\Entity\DownloadItemEntity.cs" />
+    <Compile Include="DAL\Entity\PlayingRecordEntity.cs" />
     <EmbeddedResource Include="Properties\QyClient.Core.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -116,11 +119,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DAL\AppConfig\" />
+    <Folder Include="DAL\DownloadRecord\" />
+    <Folder Include="DAL\PlayingRecord\" />
     <Folder Include="Interface\INavigator\" />
     <Folder Include="Manager\" />
     <Folder Include="Model\" />
     <Folder Include="WebBusiness\BusinessResponse\" />
     <Folder Include="WebBusiness\Business\" />
+    <Folder Include="WebBusiness\Param\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
