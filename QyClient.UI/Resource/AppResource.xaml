@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QyClient.UI.Resource"
+    xmlns:locator="using:QyClient.UI.ViewModel.Locator">
+
+    <locator:ViewModelLocator x:Key="AppViewModelLocator"></locator:ViewModelLocator>
+    
+</ResourceDictionary>

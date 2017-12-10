@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Protection.PlayReady;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,8 +15,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using QyClient.Core.Navigation;
+using QyClient.Core.Navigation.INavigator;
+using QyClient.UI.AppManagement;
+using QyClient.UI.Navigation;
+using QyClient.UI.Navigation.Interface;
+using QyClient.UI.Navigation.Navigator;
 using QyClient.UI.View;
 using QyClient.UI.View.MainView;
+using QyClient.UI.ViewModel.Locator;
 
 namespace QyClient.UI
 {
@@ -41,6 +49,8 @@ namespace QyClient.UI
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            AppLifeCycleManager.OnLaunched(e);
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -49,7 +59,7 @@ namespace QyClient.UI
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
-
+                NavigationController.SetMainFrame(rootFrame);
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -73,6 +83,8 @@ namespace QyClient.UI
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+
+            Setup();
         }
 
         /// <summary>
@@ -94,9 +106,25 @@ namespace QyClient.UI
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
-            deferral.Complete();
+            AppLifeCycleManager.OnSuspending(sender, e);
+
+            //var deferral = e.SuspendingOperation.GetDeferral();
+            ////TODO: Save application state and stop any background activity
+            //deferral.Complete();
         }
+
+
+        private void Setup()
+        {
+            RegisterNavigators();
+        }
+
+
+        private static void RegisterNavigators()
+        {
+            NavigationTool.RegisterNavigator<ILoginNavigator, LoginNavigator>();
+            NavigationTool.RegisterNavigator<IMainTabsNavigator, MainTabsNavigator>();
+        }
+
     }
 }

@@ -106,7 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\QyClient.Foundation.rd.xml" />
   </ItemGroup>
@@ -118,6 +117,7 @@
   <ItemGroup>
     <Folder Include="Http\" />
     <Folder Include="Log\" />
+    <Folder Include="Sql\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

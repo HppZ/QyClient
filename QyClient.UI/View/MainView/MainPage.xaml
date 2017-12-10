@@ -5,9 +5,39 @@
     xmlns:local="using:QyClient.UI.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:mvvm="using:QyClient.UI.MVVM"
+    DataContext="{Binding Path=MainViewModel, Source={StaticResource AppViewModelLocator}}"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition  ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Command="{Binding GotoHomeCommand}">Home</Button>
+            <Button Grid.Row="1" Command="{Binding GotoChannelCommand}">Channel</Button>
+            <Button Grid.Row="2" >VIP</Button>
+            <Button Grid.Row="3" VerticalAlignment="Bottom">Setting</Button>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Frame x:Name="ContentFrame">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Loaded">
+                        <mvvm:InvokeCommandAction2 Command="{Binding ContentFrameLoadedCommand}"></mvvm:InvokeCommandAction2>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Frame>
+        </Grid>
     </Grid>
 </Page>

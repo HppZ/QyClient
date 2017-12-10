@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -106,11 +106,51 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\ChannelController.cs" />
+    <Compile Include="Controller\ContentController.cs" />
+    <Compile Include="Controller\FeedbackController.cs" />
+    <Compile Include="Controller\MySubscriptionController.cs" />
     <Compile Include="Controller\QyClientControllerAccess.cs" />
+    <Compile Include="Controller\SearchController.cs" />
+    <Compile Include="Controller\SettingController.cs" />
+    <Compile Include="Controller\UserActivityController.cs" />
+    <Compile Include="DAL\Account\AccountRepository.cs" />
+    <Compile Include="DAL\Entity\AccountEntity.cs" />
+    <Compile Include="DAL\Entity\LikeRecordEntity.cs" />
+    <Compile Include="DAL\Interface\IAccountRepository.cs" />
+    <Compile Include="DAL\Interface\IDownloadRecordRepository.cs" />
+    <Compile Include="DAL\Interface\IPlayRecordRepository.cs" />
+    <Compile Include="DAL\Interface\IUserLikeRepository.cs" />
+    <Compile Include="DAL\UserActivityRepository\UserActivityRepository.cs" />
+    <Compile Include="Manager\DownloadManager\DownloadManager.cs" />
+    <Compile Include="Manager\Interface\IAccountManager.cs" />
+    <Compile Include="Manager\Interface\IDownloadManager.cs" />
+    <Compile Include="Manager\Interface\IPlayRecordManager.cs" />
+    <Compile Include="Manager\Interface\IUserLikeManager.cs" />
+    <Compile Include="Manager\UserLikeManager\UserLikeManager.cs" />
+    <Compile Include="Manager\PlayRecordManager\PlayRecordManager.cs" />
+    <Compile Include="Model\DownloadRecord.cs" />
+    <Compile Include="Model\LikeRecord.cs" />
+    <Compile Include="Model\PlayRecord.cs" />
+    <Compile Include="Navigation\INavigator\ILoginNavigator.cs" />
+    <Compile Include="Manager\AccountManager\AccountManager.cs" />
+    <Compile Include="Navigation\INavigator\INavigator.cs" />
+    <Compile Include="Navigation\NavigationTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\Entity\AppSettingEntity.cs" />
-    <Compile Include="DAL\Entity\DownloadItemEntity.cs" />
+    <Compile Include="DAL\Entity\DownloadRecordEntity.cs" />
     <Compile Include="DAL\Entity\PlayingRecordEntity.cs" />
+    <Compile Include="Web\BusinessResponse\LikeThisEpisodeBusinessResponse.cs" />
+    <Compile Include="Web\BusinessResponse\Base\WebBusinessResponseBase.cs" />
+    <Compile Include="Web\Business\Base\WebBusinessBase.cs" />
+    <Compile Include="Web\Business\LikeThisEpisodeBusiness.cs" />
+    <Compile Include="Web\Param\LikeThisEpisodeBusinessParam.cs" />
+    <Compile Include="Web\WebProtocol\protocol\episode.cs" />
+    <Compile Include="Web\WebProtocol\request\like_this_episode_req.cs" />
+    <Compile Include="Web\WebProtocol\request\request.cs" />
+    <Compile Include="Web\WebProtocol\response\like_this_episode_rsp.cs" />
+    <Compile Include="Web\WebServiceEngine\WebServiceEngine.cs" />
     <EmbeddedResource Include="Properties\QyClient.Core.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -120,14 +160,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\AppConfig\" />
-    <Folder Include="DAL\DownloadRecord\" />
-    <Folder Include="DAL\PlayingRecord\" />
-    <Folder Include="Interface\INavigator\" />
-    <Folder Include="Manager\" />
-    <Folder Include="Model\" />
-    <Folder Include="WebBusiness\BusinessResponse\" />
-    <Folder Include="WebBusiness\Business\" />
-    <Folder Include="WebBusiness\Param\" />
+    <Folder Include="Information\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QyClient.Foundation\QyClient.Foundation.csproj">
+      <Project>{6d13250d-4a1e-4ac5-be24-d00a275bd4a2}</Project>
+      <Name>QyClient.Foundation</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

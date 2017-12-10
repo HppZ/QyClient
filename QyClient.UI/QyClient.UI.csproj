@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -95,7 +95,26 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppManagement\AppLifeCycleManager.cs" />
+    <Compile Include="Model\Enum\MainTabs.cs" />
+    <Compile Include="Model\EpisodeItem.cs" />
+    <Compile Include="Module\Channel\ViewModel\ChannelMainViewModel.cs" />
+    <Compile Include="Module\Channel\View\ChannelMainView.xaml.cs">
+      <DependentUpon>ChannelMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Home\ViewModel\HomeMainViewModel.cs" />
+    <Compile Include="Module\Home\View\HomeMainView.xaml.cs">
+      <DependentUpon>HomeMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\InvokeCommandAction2.cs" />
+    <Compile Include="MVVM\ParameterWrapper.cs" />
+    <Compile Include="Navigation\Interface\IMainTabsNavigator.cs" />
+    <Compile Include="Navigation\NavigationController.cs" />
+    <Compile Include="Navigation\Navigator\LoginNavigator.cs" />
+    <Compile Include="Navigation\Navigator\MainTabsNavigator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Locator\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\MainView\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -121,6 +140,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Module\Channel\View\ChannelMainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Module\Home\View\HomeMainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\AppResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="View\MainView\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,10 +162,33 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmLight">
+      <Version>5.3.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Navigator\" />
+    <Folder Include="Module\Channel\INavigator\" />
+    <Folder Include="Module\Channel\Model\" />
+    <Folder Include="Module\Channel\UserControl\" />
+    <Folder Include="Module\Home\INavigator\" />
+    <Folder Include="Module\Home\Model\" />
+    <Folder Include="Module\Home\UserControl\" />
+    <Folder Include="Module\Setting\" />
+    <Folder Include="Module\Vip\" />
     <Folder Include="UserControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controls\Controls.csproj">
+      <Project>{26779b8d-cb3b-48c6-8aa3-460bdd42be08}</Project>
+      <Name>Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QyClient.Core\QyClient.Core.csproj">
+      <Project>{f83f1862-31cb-4d1b-9f67-3ce45e15b116}</Project>
+      <Name>QyClient.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

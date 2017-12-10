@@ -13,5 +13,7 @@ namespace QyClient.UI.View.MainView
         {
             this.InitializeComponent();
         }
+
+     
     }
 }
