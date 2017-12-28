@@ -15,7 +15,7 @@ namespace QyClient.Core.Controller
     public static class QyClientControllerAccess
     {
         // UI: model
-        // Core: app business: result(infomation) / app & web business: response (infomation) / protocol /
+        // Core: app business: result(infomation) / app & web business + response (infomation) / protocol /
 
         public static AccountController AccountController { get; private set; }
         public static ChannelController ChannelController { get; private set; }

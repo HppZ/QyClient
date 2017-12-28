@@ -139,6 +139,10 @@
     <Compile Include="Manager\AccountManager\AccountManager.cs" />
     <Compile Include="Navigation\INavigator\INavigator.cs" />
     <Compile Include="Navigation\NavigationTool.cs" />
+    <Compile Include="Player\Interface\IMediaPlayer.cs" />
+    <Compile Include="Player\Interface\IMediaPlayerAd.cs" />
+    <Compile Include="Player\Interface\IMediaPlayerCallback.cs" />
+    <Compile Include="Player\PlayerCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\Entity\AppSettingEntity.cs" />
     <Compile Include="DAL\Entity\DownloadRecordEntity.cs" />
@@ -164,12 +168,24 @@
     <Folder Include="DAL\AppConfig\" />
     <Folder Include="Information\" />
     <Folder Include="Interface\" />
+    <Folder Include="Player\Impl\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QyClient.Foundation\QyClient.Foundation.csproj">
       <Project>{6d13250d-4a1e-4ac5-be24-d00a275bd4a2}</Project>
       <Name>QyClient.Foundation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="libcupid_uwp">
+      <HintPath>..\dll\libcupid_uwp.winmd</HintPath>
+    </Reference>
+    <Reference Include="puma_dll_uwp">
+      <HintPath>..\dll\puma_dll_uwp.winmd</HintPath>
+    </Reference>
+    <Reference Include="UWPHCDNClientNet">
+      <HintPath>..\dll\UWPHCDNClientNet.winmd</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
