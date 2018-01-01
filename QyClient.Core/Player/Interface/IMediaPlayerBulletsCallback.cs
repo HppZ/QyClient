@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace QyClient.Core.Player.Interface
 {
-    interface IMediaPlayerAd
+    interface IMediaPlayerBulletsCallback
     {
-        void Setup();
-        void SkipAd();
-        void ClickEvent();
+        void ShowBullets(bool show, string bullets);
+
     }
 }

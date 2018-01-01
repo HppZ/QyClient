@@ -14,10 +14,11 @@ namespace QyClient.Core.Auth
         public static string account { get; private set; }
         public static string cookie { get; private set; }
 
-        public static void Update(Account userAccount)
+  
+        public static void Update(string a, string c)
         {
-            account = "";
-            cookie = "";
+            account = a;
+            cookie = c;
 
             AuthDataUpdated?.Invoke();
         }

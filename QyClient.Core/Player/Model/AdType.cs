@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QyClient.Core.Model
+namespace QyClient.Core.Player.Model
 {
-    class Account
+    enum AdType
     {
+
+
     }
 }

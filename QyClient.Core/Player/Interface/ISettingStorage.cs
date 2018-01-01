@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace QyClient.Core.Player.Interface
 {
-    interface IMediaPlayerAd
+    interface ISettingStorage
     {
-        void Setup();
-        void SkipAd();
-        void ClickEvent();
+        object GetSetting(string key);
+        bool SaveSetting(string key, object value);
+
     }
 }

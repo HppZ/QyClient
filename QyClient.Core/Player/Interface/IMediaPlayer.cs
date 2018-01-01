@@ -8,7 +8,7 @@ namespace QyClient.Core.Player.Interface
 {
     interface IMediaPlayer
     {
-        void Init(IMediaPlayerCallback callback);
+        void Init(); 
         void Play();
         void Stop();
         void Pause();

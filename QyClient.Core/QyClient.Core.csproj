@@ -131,18 +131,33 @@
     <Compile Include="Manager\Interface\IUserLikeManager.cs" />
     <Compile Include="Manager\UserLikeManager\UserLikeManager.cs" />
     <Compile Include="Manager\PlayRecordManager\PlayRecordManager.cs" />
-    <Compile Include="Model\Account.cs" />
-    <Compile Include="Model\DownloadRecord.cs" />
-    <Compile Include="Model\LikeRecord.cs" />
-    <Compile Include="Model\PlayRecord.cs" />
+    <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Entity\DownloadRecord.cs" />
+    <Compile Include="Entity\LikeRecord.cs" />
+    <Compile Include="Entity\PlayRecord.cs" />
     <Compile Include="Navigation\INavigator\ILoginNavigator.cs" />
     <Compile Include="Manager\AccountManager\AccountManager.cs" />
     <Compile Include="Navigation\INavigator\INavigator.cs" />
     <Compile Include="Navigation\NavigationTool.cs" />
+    <Compile Include="Player\Interface\IMediaPlayerBullets.cs" />
+    <Compile Include="Player\Interface\IMediaPlayerAdCallback.cs" />
     <Compile Include="Player\Interface\IMediaPlayer.cs" />
     <Compile Include="Player\Interface\IMediaPlayerAd.cs" />
+    <Compile Include="Player\Interface\IMediaPlayerBulletsCallback.cs" />
     <Compile Include="Player\Interface\IMediaPlayerCallback.cs" />
+    <Compile Include="Player\Interface\ISettingStorage.cs" />
+    <Compile Include="Player\Model\AdModel.cs" />
+    <Compile Include="Player\Model\AdType.cs" />
+    <Compile Include="Player\PlayerControl\Player.xaml.cs">
+      <DependentUpon>Player.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Player\PlayerCore.cs" />
+    <Compile Include="Player\PlayerCore.IAdObjectAppDelegate.cs" />
+    <Compile Include="Player\PlayerCore.IMediaPlayerAd.cs" />
+    <Compile Include="Player\PlayerCore.IMediaPlayerBullets.cs" />
+    <Compile Include="Player\PlayerCore.IQYPlayerCallback.cs" />
+    <Compile Include="Player\PlayerCore.IMediaPlayer.cs" />
+    <Compile Include="Player\PlayerCore.Setting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\Entity\AppSettingEntity.cs" />
     <Compile Include="DAL\Entity\DownloadRecordEntity.cs" />
@@ -186,6 +201,12 @@
     <Reference Include="UWPHCDNClientNet">
       <HintPath>..\dll\UWPHCDNClientNet.winmd</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Player\PlayerControl\Player.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
