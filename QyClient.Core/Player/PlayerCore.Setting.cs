@@ -9,7 +9,7 @@ namespace QyClient.Core.Player
     /// <summary>
     /// 设置保存
     /// </summary>
-    partial class PlayerCore
+    public partial class PlayerCore
     {
         bool IsBulletOn()
         {

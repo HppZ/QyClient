@@ -7,12 +7,13 @@ using QyClient.Core.Player.Interface;
 
 namespace QyClient.Core.Player
 {
-    partial class PlayerCore
+    public partial class PlayerCore
     {
-        private IMediaPlayerCallback _mediaPlayerCallback;
-        private IMediaPlayerAdCallback _mediaPlayerAdCallback;
-        private IMediaPlayerBulletsCallback _mediaPlayerBulletsCallback;
-        private ISettingStorage _settingStorage;
+        private readonly IMediaPlayerCallback _mediaPlayerCallback;
+        private readonly IMediaPlayerAdCallback _mediaPlayerAdCallback;
+        private readonly IMediaPlayerBulletsCallback _mediaPlayerBulletsCallback;
+        private readonly ISettingStorage _settingStorage;
+
         public PlayerCore(IMediaPlayerCallback mediaPlayerCallback, IMediaPlayerAdCallback mediaPlayerAdCallback, IMediaPlayerBulletsCallback mediaPlayerBulletsCallback, ISettingStorage settingStorage)
         {
             _mediaPlayerCallback = mediaPlayerCallback;

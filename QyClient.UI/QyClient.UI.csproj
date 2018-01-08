@@ -95,7 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppManagement\AppLifeCycleManager.cs" />
+    <Compile Include="AppMgmt\AppLifeCycleManager.cs" />
     <Compile Include="Model\Enum\MainTabs.cs" />
     <Compile Include="Model\EpisodeItem.cs" />
     <Compile Include="Module\Channel\ViewModel\ChannelMainViewModel.cs" />

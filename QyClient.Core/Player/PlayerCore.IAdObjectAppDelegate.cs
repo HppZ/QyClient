@@ -10,7 +10,7 @@ namespace QyClient.Core.Player
     /// <summary>
     /// 广告回调
     /// </summary>
-   partial class PlayerCore: IAdObjectAppDelegate
+    public partial class PlayerCore: IAdObjectAppDelegate
     {
         public void OnSlotReady(long start_time)
         {

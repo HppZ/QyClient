@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QyClient.UI.Module.Channel.View;
+using QyClient.UI.Module.Home.View;
 using QyClient.UI.Navigation.Interface;
 using QyClient.UI.ViewModel.Locator;
 
@@ -12,22 +14,22 @@ namespace QyClient.UI.Navigation.Navigator
     {
         public void GotoHome()
         {
-            ViewModelLocator.MainViewModel.GotoHome();
+            NavigationController.NavigateTo(typeof(HomeMainView), null);
         }
 
         public void GotoChannel()
         {
-            ViewModelLocator.MainViewModel.GotoChannel();
+            NavigationController.NavigateTo(typeof(ChannelMainView), null);
         }
 
         public void GotoVip()
         {
-            ViewModelLocator.MainViewModel.GotoVip();
+             
         }
 
         public void GotoSetting()
         {
-            ViewModelLocator.MainViewModel.GotoSetting();
+             
         }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace QyClient.Core.Player
 {
-    partial class PlayerCore : IMediaPlayerBullets
+    /// <summary>
+    /// 弹幕
+    /// </summary>
+    public partial class PlayerCore : IMediaPlayerBullets
     {
         public void Open(bool open)
         {
@@ -27,5 +30,9 @@ namespace QyClient.Core.Player
         {
             throw new NotImplementedException();
         }
+
+
+
+
     }
 }

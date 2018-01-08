@@ -10,7 +10,7 @@ namespace QyClient.Core.Player
     /// <summary>
     /// 播放器
     /// </summary>
-   partial class PlayerCore:  IMediaPlayer
+    public partial class PlayerCore:  IMediaPlayer
     {
         public void Init()
         {
@@ -56,5 +56,27 @@ namespace QyClient.Core.Player
         {
             throw new NotImplementedException();
         }
+
+
+
+
+        // -----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

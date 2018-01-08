@@ -148,7 +148,7 @@
     <Compile Include="Player\Interface\ISettingStorage.cs" />
     <Compile Include="Player\Model\AdModel.cs" />
     <Compile Include="Player\Model\AdType.cs" />
-    <Compile Include="Player\PlayerControl\Player.xaml.cs">
+    <Compile Include="Player\PlayerImpl\Player\Player.xaml.cs">
       <DependentUpon>Player.xaml</DependentUpon>
     </Compile>
     <Compile Include="Player\PlayerCore.cs" />
@@ -203,7 +203,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Player\PlayerControl\Player.xaml">
+    <Page Include="Player\PlayerImpl\Player\Player.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

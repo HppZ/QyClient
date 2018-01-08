@@ -7,7 +7,7 @@ using QyClient.Core.Player.Model;
 
 namespace QyClient.Core.Player
 {
-    interface IMediaPlayerAdCallback    
+    public interface IMediaPlayerAdCallback    
     {
         void ShowAd(bool show, AdModel adModel);
         void CountDown(int count);

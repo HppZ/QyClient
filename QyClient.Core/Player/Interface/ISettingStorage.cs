@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QyClient.Core.Player.Interface
 {
-    interface ISettingStorage
+    public interface ISettingStorage
     {
         object GetSetting(string key);
         bool SaveSetting(string key, object value);

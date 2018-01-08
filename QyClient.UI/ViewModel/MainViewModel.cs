@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using GalaSoft.MvvmLight.Command;
+using QyClient.Core.Navigation;
 using QyClient.UI.Navigation;
 using QyClient.UI.Navigation.Interface;
 using ChannelMainView = QyClient.UI.Module.Channel.View.ChannelMainView;
@@ -13,7 +14,7 @@ using ParameterWrapper = QyClient.UI.MVVM.ParameterWrapper;
 
 namespace QyClient.UI.ViewModel
 {
-    public class MainViewModel : IMainTabsNavigator
+    public class MainViewModel 
     {
 
         public RelayCommand<ParameterWrapper> _contentFrameLoadedCommand;
@@ -44,20 +45,25 @@ namespace QyClient.UI.ViewModel
 
         public void GotoHome()
         {
-            NavigationController.NavigateTo(typeof(HomeMainView), null);
+           NavigationTool.GetNavigator<IMainTabsNavigator>().GotoHome();
         }
 
         public void GotoChannel()
         {
-            NavigationController.NavigateTo(typeof(ChannelMainView), null);
+           NavigationTool.GetNavigator<IMainTabsNavigator>().GotoChannel();
+
         }
 
         public void GotoVip()
         {
+            NavigationTool.GetNavigator<IMainTabsNavigator>().GotoVip();
+
         }
 
         public void GotoSetting()
         {
+            NavigationTool.GetNavigator<IMainTabsNavigator>().GotoSetting();
+
         }
 
 

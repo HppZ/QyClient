@@ -11,7 +11,7 @@ namespace QyClient.Core.Player
     /// <summary>
     /// puma回调
     /// </summary>
-   partial class PlayerCore :   IQYPlayerCallback
+    public partial class PlayerCore :   IQYPlayerCallback
     {
         public void OnSeekSuccess(long msec)
         {

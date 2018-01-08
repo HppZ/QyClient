@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QyClient.Core.Player.Model
 {
-    class AdModel
+    public class AdModel
     {
     }
 }

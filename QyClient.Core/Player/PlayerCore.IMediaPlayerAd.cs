@@ -13,7 +13,7 @@ namespace QyClient.Core.Player
     /// <summary>
     /// 广告
     /// </summary>
-    partial class PlayerCore : IMediaPlayerAd
+    public partial class PlayerCore : IMediaPlayerAd
     {
         public void Setup()
         {

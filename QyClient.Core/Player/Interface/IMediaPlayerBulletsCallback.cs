@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QyClient.Core.Player.Interface
 {
-    interface IMediaPlayerBulletsCallback
+    public interface IMediaPlayerBulletsCallback
     {
         void ShowBullets(bool show, string bullets);
 
