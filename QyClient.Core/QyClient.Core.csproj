@@ -132,9 +132,9 @@
     <Compile Include="Manager\UserLikeManager\UserLikeManager.cs" />
     <Compile Include="Manager\PlayRecordManager\PlayRecordManager.cs" />
     <Compile Include="Model\AccountModel.cs" />
-    <Compile Include="Entity\DownloadRecord.cs" />
-    <Compile Include="Entity\LikeRecord.cs" />
-    <Compile Include="Entity\PlayRecord.cs" />
+    <Compile Include="Model\DownloadRecord.cs" />
+    <Compile Include="Model\LikeRecord.cs" />
+    <Compile Include="Model\PlayRecord.cs" />
     <Compile Include="Navigation\INavigator\ILoginNavigator.cs" />
     <Compile Include="Manager\AccountManager\AccountManager.cs" />
     <Compile Include="Navigation\INavigator\INavigator.cs" />
@@ -183,8 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\AppConfig\" />
-    <Folder Include="Information\" />
-    <Folder Include="Interface\" />
+    <Folder Include="Model\Information\" />
     <Folder Include="Player\Impl\" />
   </ItemGroup>
   <ItemGroup>
