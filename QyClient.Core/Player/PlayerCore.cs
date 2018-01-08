@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QyClient.Core.Auth;
 using QyClient.Core.Player.Interface;
 
 namespace QyClient.Core.Player
@@ -20,11 +21,10 @@ namespace QyClient.Core.Player
             _mediaPlayerAdCallback = mediaPlayerAdCallback;
             _mediaPlayerBulletsCallback = mediaPlayerBulletsCallback;
             _settingStorage = settingStorage;
+
+            AuthData.AuthDataUpdated += AuthData_AuthDataUpdated; ;
         }
-         
 
-
-
-
+    
     }
 }

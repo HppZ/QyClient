@@ -148,6 +148,8 @@
     <Compile Include="Player\Interface\ISettingStorage.cs" />
     <Compile Include="Player\Model\AdModel.cs" />
     <Compile Include="Player\Model\AdType.cs" />
+    <Compile Include="Player\Model\PlayState.cs" />
+    <Compile Include="Player\PlayerCore.User.cs" />
     <Compile Include="Player\PlayerImpl\Player\Player.xaml.cs">
       <DependentUpon>Player.xaml</DependentUpon>
     </Compile>

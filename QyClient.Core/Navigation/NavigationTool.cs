@@ -16,7 +16,8 @@ namespace QyClient.Core.Navigation
             var type = typeof(T);
             if (_navigators.ContainsKey(type))
             {
-                return (T) Activator.CreateInstance(type);
+                var nav = _navigators[type];
+                return (T) Activator.CreateInstance(nav);
             }
 
             return default(T);

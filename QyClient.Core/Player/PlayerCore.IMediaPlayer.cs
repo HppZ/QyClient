@@ -61,10 +61,21 @@ namespace QyClient.Core.Player
 
 
         // -----------------------------------------------------
+        // impl
+        // -----------------------------------------------------
 
 
 
+        private void PlayImpl()
+        {
+            
+        }
 
+
+        private void StopImpl()
+        {
+            
+        }
 
 
 

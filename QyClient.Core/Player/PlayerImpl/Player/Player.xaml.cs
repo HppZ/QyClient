@@ -36,7 +36,7 @@ namespace QyClient.Core.Player.PlayerControl
         }
 
 
-        public void OnPlayStateChanged(string state)
+        public void OnPlayStateChanged(PlayState state)
         {
             throw new NotImplementedException();
         }
